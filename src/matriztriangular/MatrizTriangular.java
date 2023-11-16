@@ -19,12 +19,13 @@ public class MatrizTriangular {
         inferior=new double[dim][dim];
         // Se llena la matriz
         matriz = llenar(dim);
+        System.out.println("Matriz original");
+        imprimir(matriz);
         // Se calcula tanto la matriz superior como la inferior de la matriz original
         calcularM(matriz, inferior, superior);
         
         // Imprimimos todas las matrices
-        System.out.println("Matriz original");
-        imprimir(matriz);
+        
         System.out.println("");
         System.out.println("Matriz triangular superior");
         imprimir(superior);
