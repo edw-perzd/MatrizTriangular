@@ -26,13 +26,9 @@ public class MatrizTriangular {
         
         // Imprimimos todas las matrices
         
-        System.out.println("");
-        System.out.println("Matriz triangular superior");
-        imprimir(superior);
-        System.out.println("");
-        System.out.println("Matriz triangular inferior");
-        imprimir(inferior);
-        
+        // Solicitar el tipo de matriz al usuario y mostrar solo la matriz solicitada
+        solicitarYMostrarMatriz(matriz, inferior, superior);
+
     }
     
     public static double[][] llenar(int dim){
@@ -74,6 +70,28 @@ public class MatrizTriangular {
             for (int j = k; j < original.length; j++) {
                 superior[k][j] = original[k][j];
             }
+        }
+    }
+    
+    
+    private static void solicitarYMostrarMatriz(double[][] matriz, double[][] inferior, double[][] superior) {
+        System.out.println("Inserta la letra, para la opcion que deseas calcular");
+        System.out.println("(a) - Matriz triangular superior");
+        System.out.println("(b) - Matriz triangular inferior");
+
+        char tipMatriz = en.next().charAt(0);
+
+        System.out.println("");
+        System.out.println("Matriz solicitada:");
+
+        if (tipMatriz == 'a') {
+            System.out.println("Matriz triangular superior");
+            imprimir(superior);
+        } else if (tipMatriz == 'b') {
+            System.out.println("Matriz triangular inferior");
+            imprimir(inferior);
+        } else {
+            System.out.println("Tipo de matriz no válido");
         }
     }
 }
